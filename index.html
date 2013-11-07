@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="images/favicon.gif">
 
-    <title>Carousel Template for Bootstrap</title>
+    <title>Typed Clojure - An optional type system for Clojure</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -43,20 +43,8 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
+            <li><a href="#about">Getting Started</a></li>
+            <li><a href="#contact">Support</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -65,9 +53,12 @@
 
     <!-- Jumbotron
     ================================================== -->
-    <div class="container">
-      <div class="jumbotron" style="background-color: #90B4FE;">
+    <div class="jumbotron" style="background-color: #90B4FE; padding-top: 30px;">
+      <div class="container" style="padding-left:55px; padding-top: 55px;">
         <img src="images/typed-clojure-an-optional-type-system-letterbox.png" alt="Typed Clojure, an optional type system for Clojure">
+      </div>
+      <div class="container">
+        <a class="btn btn-default" href="https://github.com/clojure/core.typed" role="button">core.typed on Github &raquo;</a>
       </div>
     </div>
 
@@ -82,7 +73,7 @@
         <div class="col-lg-4">
           <img class="img-circle" src="images/clojure-logo-140x140.png" alt="Clojure">
           <h2>Clojure, with types</h2>
-          <p>Typed Clojure preserves Clojure's strengths, enhancing many of them with the safety of static type checking.</i> where it isn't useful.</p>
+          <p>Typed Clojure preserves Clojure's strengths, enhancing many of them with the safety of static type checking.</p>
           <p><a class="btn btn-default" href="https://github.com/clojure/core.typed" role="button">core.typed on Github &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
@@ -99,14 +90,67 @@
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
+      <hr class="featurette-divider">
+
       <!-- START THE SPONSORS -->
 
       <div class="container">
-        <h2>Sponsored by</h2>
         <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-2">col-md-4</div>
-          <div class="col-md-2">col-md-4</div>
+          <h2>Sponsored by</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <a href="http://brickalloy.com/">
+              <img src="images/sponsors/brick_alloy_2_37.png" alt="Brick Alloy">
+            </a>
+          </div>
+          <div class="col-md-2">
+            <a href="http://cognitect.com/">
+              <img src="images/sponsors/cognitect_black_1_27.png" alt="Cognitect">
+            </a>
+          </div>
+          <div class="col-md-2">
+            <a href="https://www.hackerschool.com/">
+              <img src="images/sponsors/hackerschool.png" alt="Hacker School">
+            </a>
+          </div>
+          <div class="col-md-2">
+            <a href="http://www.circleci.com/">
+              <img  style="background: #3A6779;" height="40" width="110" src="images/sponsors/circleci.svg" alt="CircleCI">
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="http://sonian.com/">
+              <img src="images/sponsors/sonian.png" alt="Sonian">
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <a href="http://snowplowanalytics.com/">
+              <img src="images/sponsors/snowplow-logo.png" alt="Snowplow Analytics">
+            </a>
+          </div>
+          <div class="col-md-2" style="background-color: #353735;">
+            <a href="http://leonidasoy.fi/">
+              <img src="images/sponsors/leonidas.png" alt="Leonidas">
+            </a>
+          </div>
+          <div class="col-md-4" style="background-color: #555;">
+            <a href="http://www.thortech-solutions.com/">
+              <img src="images/sponsors/thortech.png" alt="ThorTech Solutions">
+            </a>
+          </div>
+          <div class="col-md-2">
+            <a href="http://getprismatic.com/">
+              <img src="images/sponsors/prismatic-logo.png" alt="Prismatic">
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <a href="https://twitter.com/srseverance">Shannon Severance</a>
+          </div>
         </div>
       </div> <!-- sponsors -->
 
@@ -119,6 +163,7 @@
         <div class="col-md-7">
           <h2 class="featurette-heading">Safer Host Interop. <span class="text-muted">Keep Java in line.</span></h2>
           <p class="lead">Protect your Clojure programs from Java by using Typed Clojure to help use external Java libraries correctly.</p>
+          <a class="btn btn-primary" href="http://vimeo.com/55280915">Watch how Java interop works</a>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive" src="images/java-null.png" alt="Java Horrors">
@@ -129,11 +174,12 @@
 
       <div class="row featurette">
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="images/plain-maps-green.png" alt="Clojure maps">
+         <img class="featurette-image img-responsive" src="images/plain-maps-green.png" alt="Clojure maps">
         </div>
         <div class="col-md-7">
           <h2 class="featurette-heading">Idiomatic structural typing. <span class="text-muted"> Use plain maps with confidence.</span></h2>
           <p class="lead">Typed Clojure has great support for checking usages of keyword maps. Useful map operations are understood by the type checker, including keyword lookups, adding/removing keys and merging maps.</p>
+          <a class="btn btn-primary" href="http://www.youtube.com/watch?v=CFRVW7vGwLY">Watch a hangout on Heterogeneous Maps</a>
         </div>
       </div>
 
@@ -159,6 +205,7 @@
         <div class="col-md-7">
           <h2 class="featurette-heading">Local type inference. <span class="text-muted">Simple, predictable.</span></h2>
           <p class="lead">Typed Clojure supports local type inference similar to Scala. Annotations are required for top-level vars, complicated macros, and loop/function parameters, while many other things can be inferred, like local <i>let</i> bindings, including nested destructuring and function return types.</p>
+          <a class="btn btn-primary" href="http://frenchy64.github.io/typed/clojure,/core.typed,/clojure/2013/09/02/polymorphic-hof.html">Read about inference in Typed Clojure</a>
         </div>
       </div>
 
@@ -168,7 +215,7 @@
         <div class="col-md-7">
           <h2 class="featurette-heading">Type checking as a function. <span class="text-muted">Truly &agrave; la carte.</span></h2>
           <p class="lead">Type checking is never run implicitly as part of evaluation. Typed Clojure provides a simple interface of functions to run the type checker: use them at the REPL, in a unit test, at the command line, integrate it with your IDE ... the choice is yours!</p>
-          <a class="btn btn-primary" href="#">Button</a>
+          <a class="btn btn-primary" href="https://github.com/typedclojure/lein-typed">See the Typed Clojure Leiningen plugin</a>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive" src="images/check-ns-dark-blue.png" alt="Run the type checker when you want">
