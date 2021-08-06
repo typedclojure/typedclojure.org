@@ -5,13 +5,13 @@ on:
     branches:
       - jbake
 
-env:
-  JBAKE_VERSION: "2.6.7"
-  JBAKE_SHA1: "fd07b833104f2889fde9a07d0c0bf09f0fdecbf6"
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      JBAKE_VERSION: "2.6.7"
+      JBAKE_SHA1: "fd07b833104f2889fde9a07d0c0bf09f0fdecbf6"
     steps:
       - uses: actions/checkout@v2
       - run: 
