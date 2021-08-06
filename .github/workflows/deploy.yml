@@ -1,5 +1,10 @@
 name: Deploy
 
+on:
+  push:
+    branches:
+      - gh-pages
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
