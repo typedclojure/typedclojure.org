@@ -5,7 +5,6 @@ on:
     branches:
       - jbake
 
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -14,7 +13,6 @@ jobs:
       JBAKE_SHA1: "fd07b833104f2889fde9a07d0c0bf09f0fdecbf6"
     steps:
       - uses: actions/checkout@v2
-      - run: 
       - run: |
           mkdir -p downloads
           cd downloads
@@ -26,6 +24,7 @@ jobs:
           unzip "jbake-${JBAKE_VERSION}-bin.zip.sha"
           ls
           mv jbake ../bin
+      - run: ./bin/jbake
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
