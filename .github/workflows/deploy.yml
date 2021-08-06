@@ -19,7 +19,7 @@ jobs:
           if [[ ! -f "jbake-${JBAKE_VERSION}-bin.zip" ]]; then
             wget "https://github.com/jbake-org/jbake/releases/download/v${JBAKE_VERSION}/jbake-${JBAKE_VERSION}-bin.zip"
           fi
-          echo "${JBAKE_SHA1}" > "jbake-${JBAKE_VERSION}-bin.zip.sha"
+          echo "${JBAKE_SHA1}  jbake-${JBAKE_VERSION}-bin.zip.sha" > "jbake-${JBAKE_VERSION}-bin.zip.sha"
           sha1sum -c "jbake-${JBAKE_VERSION}-bin.zip.sha"
           unzip "jbake-${JBAKE_VERSION}-bin.zip.sha"
           ls
