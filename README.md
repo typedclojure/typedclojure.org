@@ -2,8 +2,11 @@
 
 Source for https://typedclojure.org/
 
-Currently deployed via GitHub Pages.
+Currently deployed via AWS S3.
 
-## jbake branch
+Build requires jbake:
 
-Deployed http://typedclojure.org.s3-website-us-west-2.amazonaws.com/
+```
+./script/build.sh
+./script/serve.sh
+```
