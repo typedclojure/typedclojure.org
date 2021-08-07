@@ -43,7 +43,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <!-- TODO class="active" on active li -->
-            <li><a href="/">Home</a></li>
+            <!--<li><a href="/">Home</a></li>-->
             <li><a href="/guides/getting_started">Getting Started</a></li>
             <!--<li><a href="#contact">Support</a></li>-->
           </ul>
