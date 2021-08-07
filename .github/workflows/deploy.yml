@@ -25,9 +25,6 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
       - name: Setup bin path
-        run: |
-          mkdir -p "$HOME/.local/bin"
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
       - name: Install jbake
         run: |
           mkdir -p downloads
@@ -38,7 +35,8 @@ jobs:
           echo "${JBAKE_SHA1}  jbake-${JBAKE_VERSION}-bin.zip" > "jbake-${JBAKE_VERSION}-bin.zip.sha"
           sha1sum -c "jbake-${JBAKE_VERSION}-bin.zip.sha"
           unzip "jbake-${JBAKE_VERSION}-bin.zip"
-          mv "jbake-${JBAKE_VERSION}-bin" "$HOME/.local/bin"
+          mv "jbake-${JBAKE_VERSION}-bin" jbake
+          echo "$PWD/jbake/bin" >> $GITHUB_PATH
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
