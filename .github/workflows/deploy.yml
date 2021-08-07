@@ -20,6 +20,10 @@ jobs:
           path: |
             downloads/*.zip
           key: ${{ env.ACTIONS_CACHE_VERSION }}-${{ runner.os }}-${{ env.JBAKE_VERSION }}
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '11'
       - run: |
           mkdir -p downloads
           cd downloads
