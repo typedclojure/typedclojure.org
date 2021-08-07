@@ -12,8 +12,6 @@ if [[ -z "$AWS_BUCKET" ]]; then
 fi
 
 ./script/build.sh
-# FIXME cloudfront won't respect content type
-cp output/index output/index.html
 
 aws s3 sync --acl public-read --follow-symlinks --delete output "s3://${AWS_BUCKET}"
 # https://anands.github.io/blog/2018/11/18/serve-static-pages-on-s3-without-html-extension/
