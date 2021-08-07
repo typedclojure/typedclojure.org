@@ -7,7 +7,7 @@
         <img src="/images/typed-clojure-an-optional-type-system-letterbox.png" alt="Typed Clojure, an optional type system for Clojure">
       </div>
       <div class="container" style="padding-left: 300px;">
-        <p><a class="btn btn-lg btn-default" href="/guides/getting_started.html" role="button">Getting started</a><p>
+        <p><a class="btn btn-lg btn-default" href="/guides/getting_started" role="button">Getting started</a><p>
       </div>
     </div>
 
