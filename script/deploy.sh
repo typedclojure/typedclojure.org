@@ -9,6 +9,8 @@ set -e
 if [[ -z "$AWS_BUCKET" ]]; then
   echo "Must provide AWS Bucket"
   exit 1
-fi 
+fi
 
-aws s3 sync --acl public-read --follow-symlinks --delete docs "s3://${AWS_BUCKET}"
+jbake -b
+
+aws s3 sync --acl public-read --follow-symlinks --delete output "s3://${AWS_BUCKET}"
