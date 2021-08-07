@@ -12,6 +12,8 @@ Welcome to Typed Clojure!
 
 Typed Clojure is a library that adds static type checking to Clojure. If you're an experienced Clojure programmer, you can install it using your favourite tool at https://github.com/typedclojure/typedclojure/blob/main/typed/clj.checker/README.md#releases-and-dependency-information[these coordinates].
 
+== Quick Start
+
 If you're just starting out, please install https://leiningen.org/[Leiningen] to try it out. Create a new project in a terminal:
 
 [source,shell]
@@ -38,10 +40,11 @@ Typed Clojure requires type annotations to check your code. Let's create a simpl
   (:require [clojure.core.typed :as t]))
 
 (t/ann welcome-string [t/Str :-> t/Str])
-(defn welcome-string
-  "I don't do a whole lot."
-  [a-name]
-  (str "Welcome, " a-name))
+(defn welcome-string [a-name]
+  (str "Welcome to " a-name "!"))
+
+(welcome-string "Typed Clojure")
+;=> "Welcome to Typed Clojure!"
 ----
 
 Now, we can check the namespace. Start a REPL and call https://api.typedclojure.org/latest/typed.clj.runtime/clojure.core.typed.html#var-check-ns[check-ns] to type check the current namespace.
@@ -70,9 +73,7 @@ Leave your REPL open---we're going to add a type error to the file and see what 
   (:require [clojure.core.typed :as t]))
 
 (t/ann welcome-string [t/Str :-> t/Str])
-(defn welcome-string
-  "I don't do a whole lot."
-  [a-name]
+(defn welcome-string [a-name]
   (str "Welcome, " a-name))
 
 (welcome-string nil)
@@ -135,7 +136,7 @@ clojure.core.typed/Str
 nil
 ------------------------------
 
-Ok, now since `welcome-string` allows `nil`, it should type check again (don't forget to save the file!).
+Ok, now since `welcome-string` allows `nil`, it should type check again (don't forget to save the file after updating the annotation!).
 
 [source,clojure]
 ------------------------------
