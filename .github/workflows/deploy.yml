@@ -24,7 +24,6 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '11'
-      - name: Setup bin path
       - name: Install jbake
         run: |
           mkdir -p downloads
