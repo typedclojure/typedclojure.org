@@ -148,7 +148,7 @@ Checked org.my-domain.my-project in 32.831593 msecs
 
 == Where to go from here
 
-Typed Clojure is not extensively documented yet, and lacks tutorials. Most the development is currently focussed on improving error messages and improving type inference.
+Typed Clojure is not extensively documented yet, and lacks tutorials. Currently development is focussed on improving error messages and type inference.
 
 For more hints, I suggest browsing the https://github.com/clojure/core.typed/wiki[core.typed wiki], as Typed Clojure is almost a superset of core.typed.
 
