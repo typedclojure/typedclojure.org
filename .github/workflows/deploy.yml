@@ -11,14 +11,15 @@ jobs:
     env:
       JBAKE_VERSION: "2.6.7"
       JBAKE_SHA1: "fd07b833104f2889fde9a07d0c0bf09f0fdecbf6"
+      ACTIONS_CACHE_VERSION: 1
     steps:
       - uses: actions/checkout@v2
-      - name: Cache
+      - name: JBake Cache
         uses: actions/cache@v2
         with:
           path: |
             downloads/*.zip
-          key: ${{ runner.os }}-${{ env.JBAKE_VERSION }}
+          key: ${{ env.ACTIONS_CACHE_VERSION }}-${{ runner.os }}-${{ env.JBAKE_VERSION }}
       - run: |
           mkdir -p downloads
           cd downloads
@@ -26,7 +27,7 @@ jobs:
             wget "https://github.com/jbake-org/jbake/releases/download/v${JBAKE_VERSION}/jbake-${JBAKE_VERSION}-bin.zip"
           fi
           sha1sum "jbake-${JBAKE_VERSION}-bin.zip"
-          echo "${JBAKE_SHA1}  jbake-${JBAKE_VERSION}-bin.zip.sha" > "jbake-${JBAKE_VERSION}-bin.zip.sha"
+          echo "${JBAKE_SHA1}  jbake-${JBAKE_VERSION}-bin.zip" > "jbake-${JBAKE_VERSION}-bin.zip.sha"
           sha1sum -c "jbake-${JBAKE_VERSION}-bin.zip.sha"
           unzip "jbake-${JBAKE_VERSION}-bin.zip.sha"
           ls
