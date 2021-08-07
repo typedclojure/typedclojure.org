@@ -1,27 +1,5 @@
 <#include "header.ftl">
 
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Typed Clojure</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="https://github.com/clojure/core.typed/wiki">Getting Started</a></li>
-            <!--<li><a href="#contact">Support</a></li>-->
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-
-
     <!-- Jumbotron
     ================================================== -->
     <div class="jumbotron" style="background-color: #90B4FE;">
@@ -52,13 +30,13 @@
           <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
           <h2>Open Source</h2>
           <p>Typed Clojure is capable of finding bugs in real Clojure code.</p>
-          <p><a class="btn btn-default" href="http://blog.circleci.com/supporting-typed-clojure/" role="button">Typed Clojure at CircleCI &raquo;</a></p>
+          <p><a class="btn btn-default" href="https://circleci.com/blog/why-we're-supporting-typed-clojure/" role="button">Typed Clojure at CircleCI &raquo;</a></p>
         </div>
         <div class="col-lg-4">
           <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
           <h2>Made for use</h2>
           <p>Typed Clojure is designed to be used in real code.</p>
-          <p><a class="btn btn-default" href="http://www.indiegogo.com/projects/typed-clojure/" role="button">Typed Clojure Indiegogo Campaign &raquo;</a></p>
+          <p><a class="btn btn-default" href="https://www.indiegogo.com/projects/typed-clojure/" role="button">Typed Clojure Indiegogo Campaign &raquo;</a></p>
         </div>-->
       </div><!-- /.row -->
 
@@ -99,7 +77,7 @@
         <div class="col-md-7">
           <h2 class="featurette-heading">Safer Host Interop. <span class="text-muted">Keep Java in line.</span></h2>
           <p class="lead">Protect your Clojure programs from Java by using Typed Clojure to help use external Java libraries correctly.</p>
-          <a class="btn btn-primary" href="http://vimeo.com/55280915">Watch how Java interop works</a>
+          <a class="btn btn-primary" href="https://vimeo.com/55280915">Watch how Java interop works</a>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive" src="images/java-null.png" alt="Java Horrors">
@@ -115,7 +93,7 @@
         <div class="col-md-7">
           <h2 class="featurette-heading">Idiomatic structural typing. <span class="text-muted"> Use plain maps with confidence.</span></h2>
           <p class="lead">Typed Clojure has great support for checking usages of keyword maps. Useful map operations are understood by the type checker, including keyword lookups, adding/removing keys and merging maps.</p>
-          <a class="btn btn-primary" href="http://www.youtube.com/watch?v=CFRVW7vGwLY">Watch a hangout on Heterogeneous Maps</a>
+          <a class="btn btn-primary" href="https://www.youtube.com/watch?v=CFRVW7vGwLY">Watch a hangout on Heterogeneous Maps</a>
         </div>
       </div>
 
@@ -125,7 +103,7 @@
         <div class="col-md-7">
           <h2 class="featurette-heading">Local flow reasoning. <span class="text-muted">Check regular Clojure code.</span></h2>
           <p class="lead">Typed Clojure uses simple yet inexpensive and effective inference techniques to reason about local program flow.</p>
-          <a class="btn btn-primary" href="http://frenchy64.github.io/typed/clojure,/core.typed,/clojure/2013/08/16/first-steps-with-core-typed.html">Read about occurrence typing</a>
+          <a class="btn btn-primary" href="https://blog.ambrosebs.com/typed/clojure,/core.typed,/clojure/2013/08/16/first-steps-with-core-typed.html">Read about occurrence typing</a>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive" src="images/clojure-cond.png" alt="Typed Clojure understands conditionals">
@@ -141,7 +119,7 @@
         <div class="col-md-7">
           <h2 class="featurette-heading">Local type inference. <span class="text-muted">Simple, predictable.</span></h2>
           <p class="lead">Typed Clojure supports local type inference similar to Scala. Annotations are required for top-level vars, complicated macros, and loop/function parameters, while many other things can be inferred, like local <i>let</i> bindings, including nested destructuring and function return types.</p>
-          <a class="btn btn-primary" href="http://frenchy64.github.io/typed/clojure,/core.typed,/clojure/2013/09/03/polymorphic-hof.html">Read about inference in Typed Clojure</a>
+          <a class="btn btn-primary" href="https://blog.ambrosebs.com/typed/clojure,/core.typed,/clojure/2013/09/03/polymorphic-hof.html">Read about inference in Typed Clojure</a>
         </div>
       </div>
 

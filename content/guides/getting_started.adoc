@@ -1,0 +1,11 @@
+= Getting Started
+Ambrose Bonnaire-Sergeant
+2021-01-14
+:jbake-type: post
+:jbake-status: draft
+
+ifdef::env-github,env-browser[:outfilesuffix: .adoc]
+
+toc::[]
+
+Welcome to Typed Clojure!
