@@ -11,6 +11,6 @@ if [[ -z "$AWS_BUCKET" ]]; then
   exit 1
 fi
 
-jbake -b
+./script/build.sh
 
 aws s3 sync --acl public-read --follow-symlinks --delete output "s3://${AWS_BUCKET}"
