@@ -32,9 +32,8 @@ jobs:
           fi
           echo "${JBAKE_SHA1}  jbake-${JBAKE_VERSION}-bin.zip" > "jbake-${JBAKE_VERSION}-bin.zip.sha"
           sha1sum -c "jbake-${JBAKE_VERSION}-bin.zip.sha"
-          unzip "jbake-${JBAKE_VERSION}-bin.zip"
-          ln -s "jbake-${JBAKE_VERSION}-bin/bin/jbake" ../bin/jbake
-      - run: ./bin/jbake
+          unzip "jbake-${JBAKE_VERSION}-bin.zip" -o jbake
+      - run: ./downloads/jbake/bin/jbake
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
