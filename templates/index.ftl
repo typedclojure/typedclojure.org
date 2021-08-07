@@ -50,8 +50,8 @@
         </div>
         <div class="row">
           <div class="col-md-1">
-            <a href="https://github.com/nubank">
-              <img src="/images/sponsors/nubank.png" alt="Nubank">
+            <a href="https://github.com/cognitect">
+              <img src="/images/sponsors/cognitect_black_1_27.png" alt="Cognitect">
             </a>
           </div>
         </div>
