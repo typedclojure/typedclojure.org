@@ -2,7 +2,7 @@
 Ambrose Bonnaire-Sergeant
 2021-01-14
 :jbake-type: post
-:jbake-status: draft
+:jbake-status: published
 
 ifdef::env-github,env-browser[:outfilesuffix: .adoc]
 
