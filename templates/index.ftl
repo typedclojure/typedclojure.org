@@ -4,10 +4,10 @@
     ================================================== -->
     <div class="jumbotron" style="background-color: #90B4FE;">
       <div class="container" style="padding-left:55px;">
-        <img src="images/typed-clojure-an-optional-type-system-letterbox.png" alt="Typed Clojure, an optional type system for Clojure">
+        <img src="/images/typed-clojure-an-optional-type-system-letterbox.png" alt="Typed Clojure, an optional type system for Clojure">
       </div>
       <div class="container" style="padding-left: 300px;">
-        <p><a class="btn btn-lg btn-default" href="guides/getting_started" role="button">Getting started</a><p>
+        <p><a class="btn btn-lg btn-default" href="/guides/getting_started.html" role="button">Getting started</a><p>
       </div>
     </div>
 
@@ -20,7 +20,7 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src="images/clojure-logo-140x140.png" alt="Clojure">
+          <img class="img-circle" src="/images/clojure-logo-140x140.png" alt="Clojure">
           <h2>Clojure, with types</h2>
           <p>Typed Clojure preserves Clojure's strengths, enhancing many of them with the safety of static type checking.</p>
           <p><a class="btn btn-default" href="https://github.com/typedclojure/typedclojure" role="button">Typed Clojure on Github &raquo;</a></p>
@@ -51,14 +51,14 @@
         <div class="row">
           <div class="col-md-1">
             <a href="https://github.com/nubank">
-              <img src="images/sponsors/nubank.png" alt="Nubank">
+              <img src="/images/sponsors/nubank.png" alt="Nubank">
             </a>
           </div>
         </div>
         <div class="row">
           <div class="col-md-2">
             <a href="https://adgoji.com/">
-              <img src="images/sponsors/adgoji.png" alt="AdGoji">
+              <img src="/images/sponsors/adgoji.png" alt="AdGoji">
             </a>
           </div>
         </div>
@@ -80,7 +80,7 @@
           <a class="btn btn-primary" href="https://vimeo.com/55280915">Watch how Java interop works</a>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="images/java-null.png" alt="Java Horrors">
+          <img class="featurette-image img-responsive" src="/images/java-null.png" alt="Java Horrors">
         </div>
       </div>
 
@@ -88,7 +88,7 @@
 
       <div class="row featurette">
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="images/plain-maps-green.png" alt="Clojure maps">
+          <img class="featurette-image img-responsive" src="/images/plain-maps-green.png" alt="Clojure maps">
         </div>
         <div class="col-md-7">
           <h2 class="featurette-heading">Idiomatic structural typing. <span class="text-muted"> Use plain maps with confidence.</span></h2>
@@ -106,7 +106,7 @@
           <a class="btn btn-primary" href="https://blog.ambrosebs.com/typed/clojure,/core.typed,/clojure/2013/08/16/first-steps-with-core-typed.html">Read about occurrence typing</a>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="images/clojure-cond.png" alt="Typed Clojure understands conditionals">
+          <img class="featurette-image img-responsive" src="/images/clojure-cond.png" alt="Typed Clojure understands conditionals">
         </div>
       </div>
 
@@ -114,7 +114,7 @@
 
       <div class="row featurette">
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="images/clojure-let-dark-green.png" alt="Infer let bindings">
+          <img class="featurette-image img-responsive" src="/images/clojure-let-dark-green.png" alt="Infer let bindings">
         </div>
         <div class="col-md-7">
           <h2 class="featurette-heading">Local type inference. <span class="text-muted">Simple, predictable.</span></h2>
@@ -132,7 +132,7 @@
           <a class="btn btn-primary" href="https://github.com/typedclojure/lein-typed">See the Typed Clojure Leiningen plugin</a>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="images/check-ns-dark-blue.png" alt="Run the type checker when you want">
+          <img class="featurette-image img-responsive" src="/images/check-ns-dark-blue.png" alt="Run the type checker when you want">
         </div>
       </div>
 

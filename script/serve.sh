@@ -1,3 +1,3 @@
 #!/bin/sh
 
-jbake -s
+jbake -s -b
