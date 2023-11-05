@@ -1,5 +1,5 @@
 (ns org.my-domain.my-project
-  (:require [clojure.core.typed :as t]))
+  (:require [typed.clojure :as t]))
 
 (t/ann welcome-string [(t/U nil t/Str) :-> t/Str])
 (defn welcome-string

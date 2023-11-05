@@ -26,9 +26,12 @@ Now change the generated `project.clj` file to include the Typed Clojure checker
 
 [source,clojure]
 ----
-(defproject org.my-domain/my-project "1.0.0-SNAPSHOT"
-  :dependencies [[org.clojure/clojure "1.10.3"]
-                 [org.typedclojure/typed.clj.checker "1.0.17"]]
+(defproject org.my-domain/my-project "0.1.0-SNAPSHOT"
+  :dependencies [[org.clojure/clojure "1.11.1"]
+                 ;; annotation macros like t/ann
+                 [org.typedclojure/typed.clj.runtime "1.1.5"]]
+  :profiles {:dev {:dependencies [;; the full type checker, only needed at dev-time
+                                  [org.typedclojure/typed.clj.checker "1.1.5"]]}}
   :repl-options {:init-ns org.my-domain.my-project})
 ----
 
@@ -37,7 +40,7 @@ Typed Clojure requires type annotations to check your code. Let's create a simpl
 [source,clojure]
 ----
 (ns org.my-domain.my-project
-  (:require [clojure.core.typed :as t]))
+  (:require [typed.clojure :as t]))
 
 (t/ann welcome-string [t/Str :-> t/Str])
 (defn welcome-string [a-name]
@@ -52,15 +55,10 @@ Now, we can check the namespace. Start a REPL and call https://api.typedclojure.
 [source,clojure]
 ----
 $ lein repl
-Clojure 1.10.3
-org.my-domain.my-project=> (t/check-ns)
-Initializing core.typed ...
-Building core.typed base environments ...
-Finished building base environments
-"Elapsed time: 9154.355686 msecs"
-core.typed initialized.
+Clojure 1.11.1
+org.my-domain.my-project=> (t/check-ns-clj)
 Start checking org.my-domain.my-project
-Checked org.my-domain.my-project in 170.536377 msecs
+Checked org.my-domain.my-project in 32.836713 msecs
 :ok
 ----
 
@@ -70,7 +68,7 @@ Leave your REPL open---we're going to add a type error to the file and see what 
 [source,clojure]
 ----
 (ns org.my-domain.my-project
-  (:require [clojure.core.typed :as t]))
+  (:require [typed.clojure :as t]))
 
 (t/ann welcome-string [t/Str :-> t/Str])
 (defn welcome-string [a-name]
@@ -79,11 +77,11 @@ Leave your REPL open---we're going to add a type error to the file and see what 
 (welcome-string nil)
 ----
 
-Save the file and call https://api.typedclojure.org/latest/typed.clj.runtime/clojure.core.typed.html#var-check-ns[check-ns] again.
+Save the file and call https://api.typedclojure.org/latest/typed.clj.runtime/typed.clojure.html#var-check-ns-clj[check-ns-clj] again.
 
 [source,clojure]
 ----
-org.my-domain.my-project=> (t/check-ns)
+org.my-domain.my-project=> (t/check-ns-clj)
 Start checking org.my-domain.my-project
 Type Error (file:/Users/ambrose/Projects/typedclojure.org/example-projects/my-project/src/org/my_domain/my_project.clj:10:1)
 Function welcome-string could not be applied to arguments:
@@ -117,22 +115,21 @@ In Typed Clojure, `nil` is not a `String`. In most cases, `nil` must be specifie
 (t/ann welcome-string [(t/U nil t/Str) :-> t/Str])
 ----
 
-By the way, use https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc[doc] to find out more about the namespace-qualified types. Let's see what https://api.typedclojure.org/latest/typed.clj.runtime/clojure.core.typed.html#var-U[U] and `Str` mean.
+By the way, use https://api.typedclojure.org/latest/typed.clj.runtime/typed.clojure.html#var-doc-clj[doc-clj] to find out more about the namespace-qualified types. Let's see what `U` and `Str` mean.
 
 [source,clojure]
 ------------------------------
-org.my-domain.my-project=> (doc t/U)
--------------------------
-clojure.core.typed/U
-  (U type*)
-  U represents a union of types
+org.my-domain.my-project=> (t/doc-clj t/U)
+Special type: typed.clojure/U
+U represents a union of types
+Forms: [(U type*)]
+
 nil
-org.my-domain.my-project=> (doc t/Str)
--------------------------
-clojure.core.typed/Str
-  quote
-  [Str]
-  A string
+org.my-domain.my-project=> (t/doc-clj t/Str)
+Type alias typed.clojure/Str
+String
+Metadata:
+{:doc "A string", :forms '[Str], :file "typed/ann/clojure.cljc"}
 nil
 ------------------------------
 
@@ -140,7 +137,7 @@ Ok, now since `welcome-string` allows `nil`, it should type check again (don't f
 
 [source,clojure]
 ------------------------------
-org.my-domain.my-project=> (t/check-ns)
+org.my-domain.my-project=> (t/check-ns-clj)
 Start checking org.my-domain.my-project
 Checked org.my-domain.my-project in 32.831593 msecs
 :ok
