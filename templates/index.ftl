@@ -55,13 +55,6 @@
             </a>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-2">
-            <a href="https://adgoji.com/">
-              <img src="/images/sponsors/adgoji.png" alt="AdGoji">
-            </a>
-          </div>
-        </div>
         <p>
         Typed Clojure is financially supported by donations via <a href="https://github.com/sponsors/frenchy64">GitHub Sponsors</a>,
         <a href="https://opencollective.com/typedclojure">OpenCollective</a>, and <a href="https://www.patreon.com/ambrosebs">Patreon</a>.
