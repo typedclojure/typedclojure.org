@@ -2,7 +2,7 @@
 
 Source for https://typedclojure.org/
 
-Currently deployed via AWS S3.
+Currently deployed via GitHub Pages.
 
 Build requires jbake:
 

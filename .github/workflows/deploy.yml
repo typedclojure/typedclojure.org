@@ -5,27 +5,36 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 concurrency:
-  group: "website_deployment"
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     env:
       JBAKE_VERSION: "2.6.7"
       JBAKE_SHA1: "fd07b833104f2889fde9a07d0c0bf09f0fdecbf6"
       ACTIONS_CACHE_VERSION: 1
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: JBake Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: |
             downloads/*.zip
           key: ${{ env.ACTIONS_CACHE_VERSION }}-${{ runner.os }}-${{ env.JBAKE_VERSION }}
-      - uses: actions/setup-java@v2
+      - uses: actions/setup-java@v4
         with:
-          distribution: 'adopt'
+          distribution: 'temurin'
           java-version: '11'
       - name: Install jbake
         run: |
@@ -39,12 +48,14 @@ jobs:
           unzip "jbake-${JBAKE_VERSION}-bin.zip"
           mv "jbake-${JBAKE_VERSION}-bin" jbake
           echo "$PWD/jbake/bin" >> $GITHUB_PATH
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
+      - name: Build site
+        run: ./script/build.sh
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-2
-      - run: ./script/deploy.sh
-        env:
-          AWS_BUCKET: typedclojure.org
+          path: output
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
